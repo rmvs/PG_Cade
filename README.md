@@ -43,7 +43,7 @@ Caso precise alterar alguma variável de ambiente terá que recriar o container.
 
 3. Faça o build da imagem usando o seguinte comando
 ```sh
- docker build --rm -f Dockerfile.dockerfile -t pg-cade:latest .
+ docker build --rm -t pg-cade:latest .
 ```
 4. Crie pastas para persistir os dados salvos entre o container e o Windows
 ```powershell
