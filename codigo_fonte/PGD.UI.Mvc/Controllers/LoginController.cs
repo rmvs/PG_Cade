@@ -115,7 +115,8 @@ namespace PGD.UI.Mvc.Controllers
             var porta = int.Parse(ConfigurationManager.AppSettings["PortaLDAP"].ToString());
             DirectoryEntry directoryEntry = new DirectoryEntry("LDAP://" + ip + ":" + porta, loginViewModel.Sigla, loginViewModel.Senha);
             DirectorySearcher directorySearcher = new DirectorySearcher(directoryEntry);
-            directorySearcher.Filter = "(SAMAccountName=" + loginViewModel.Sigla + ")";
+            // directorySearcher.Filter = "(SAMAccountName=" + loginViewModel.Sigla + ")";
+            directorySearcher.Filter = String.Format(ConfigurationManager.AppSettings["LDAPQueryFilter"].ToString(),loginViewModel.Sigla);
             SearchResult searchResult = directorySearcher.FindOne();
 
         }
