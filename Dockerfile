@@ -35,7 +35,7 @@ FROM microsoft/aspnet:4.7.2 AS runtime
 WORKDIR /inetpub/wwwroot/
 COPY --from=build c:/cade-pdg/. ./
 COPY --from=build /cade/packages/EntityFramework.6.1.3/tools/migrate.exe/ ./bin/
-# COPY --from=build /cade/migrate.ps1/ ./
+COPY --from=build /cade/migrate.ps1/ ./
 COPY --from=build /cade/entrypoint.ps1/ ./
 
 
