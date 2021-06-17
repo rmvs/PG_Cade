@@ -26,5 +26,5 @@ $xml.get_DocumentElement()['system.net'].mailSettings.smtp.network.password = "$
 $xml.get_DocumentElement().nlog.targets.target.connectionString = "$env:PGDCONNECTIONSTRING"; 
 $xml.get_DocumentElement().nlog.rules.logger.levels = "$env:NIVEISLOG";
 $xml.Save($webXmlPath);
-Write-Host "Programa de Gestão do Cade.";
+Write-Host "Programa de Gestao do Cade";
 C:/ServiceMonitor.exe w3svc;
