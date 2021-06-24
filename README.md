@@ -1,7 +1,4 @@
-# PG_Cade_Anvisa Docker
-
-Programa de gestão do Cade/Anvisa em container docker.
-
+# Programa de gestão do teletrabalho CGU/MMA/Cade em container docker.
 
 ## Instruções
 
