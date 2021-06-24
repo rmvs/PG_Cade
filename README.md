@@ -1,4 +1,4 @@
-# Programa de gestão do teletrabalho CGU/MMA/Cade em container docker.
+# Programa de gestão CGU/MMA/Cade em container docker.
 
 ## Instruções
 
