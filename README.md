@@ -61,7 +61,7 @@ Caso precise alterar alguma variável de ambiente terá que recriar o container.
 
 6. (Opcional) Atualize o ícone do sistema
 ```
- docker stop gestao_cade && docker cp C:\CAMINHO_DO_SEU_ICONE\favicon.ico gestao_cade:C:\inetpub\wwwroot\favicon.icon && docker start gestao_cade
+ docker stop gestao_cade && docker cp C:\CAMINHO_DO_SEU_ICONE\favicon.ico gestao_cade:C:\inetpub\wwwroot\favicon.ico && docker start gestao_cade
 ```
 
 7. Você pode verificar a implantação do sistema em  ```http://localhost:9111```
