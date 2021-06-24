@@ -44,7 +44,7 @@ RUN powershell -Command Import-Module WebAdministration; `
                 Set-ItemProperty -Path "IIS:\AppPools\pg_cade_pool" managedRuntimeVersion "v4.0"; `
                 Set-ItemProperty -Path "IIS:\AppPools\pg_cade_pool" processModel.identityType "ApplicationPoolIdentity"; `
                 Set-ItemProperty -Path "IIS:\AppPools\pg_cade_pool" managedPipelineMode "Integrated"; `
-                Set-ItemProperty -Path "IIS:\AppPools\pg_cade_pool" enable32BitAppOnWin64 true; `
+                #Set-ItemProperty -Path "IIS:\AppPools\pg_cade_pool" enable32BitAppOnWin64 true; `
                 New-WebSite -Name "pg-cade" -Port 80 -PhysicalPath "C:\inetpub\wwwroot" -ApplicationPool pg_cade_pool;
 
 ENTRYPOINT ["powershell.exe","./entrypoint.ps1"]

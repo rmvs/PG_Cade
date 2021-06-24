@@ -1,6 +1,6 @@
 $webXmlPath = './Web.config'; 
 $xml = ((Get-Content $webXmlPath) -as [Xml]); 
-$xml.get_DocumentElement()['system.web'].compilation.debug = "$env:DEBUG";
+$xml.get_DocumentElement()['system.web'].compilation.debug = if($env:DEBUG -ne $null) {"$env:DEBUG"} else {"false"};
 ($xml.get_DocumentElement().appSettings.add | Where-Object { $_.Key -eq 'ambiente' }).value = "$env:AMBIENTE";
 ($xml.get_DocumentElement().appSettings.add | Where-Object { $_.Key -eq 'LDAPQueryFilter' }).value = "$env:LDAPQUERYFILTER";
 ($xml.get_DocumentElement().appSettings.add | Where-Object { $_.Key -eq 'gravarEmailEmArquivo' }).value = "$env:GRAVAREMAILEMARQUIVO";
@@ -27,4 +27,4 @@ $xml.get_DocumentElement().nlog.targets.target.connectionString = "$env:PGDCONNE
 $xml.get_DocumentElement().nlog.rules.logger.levels = "$env:NIVEISLOG";
 $xml.Save($webXmlPath);
 Write-Host "Programa de Gestao do Cade";
-C:/ServiceMonitor.exe w3svc;
+& C:/ServiceMonitor.exe w3svc;
