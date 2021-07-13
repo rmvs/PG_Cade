@@ -14,6 +14,6 @@ namespace PGD.Domain.Interfaces.Service
         Produto BuscarPorId(int idpacto, int idproduto);
         Produto AtualizarIdProduto(Produto obj, int idProduto);
         Produto AtualizarObservacaoProduto(int idProduto, string observacoes);
-        Produto AtualizarSituacaoProduto(int idProduto, int idSituacaoProduto);
+        Produto AtualizarSituacaoProduto(int idProduto, int? idSituacaoProduto);
     }
 }

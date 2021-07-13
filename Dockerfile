@@ -1,6 +1,7 @@
 # escape=`
 
-FROM microsoft/dotnet-framework:4.7.2-sdk AS build
+FROM mcr.microsoft.com/dotnet/framework/sdk AS build
+
 
 LABEL maintaner="elano.melo@sti.ufc.br"
 
@@ -31,7 +32,7 @@ RUN msbuild PGD.UI.Mvc /p:Configuration=Release `
             /p:publishUrl=c:\cade-pdg `
             /t:WebPublish
 
-FROM microsoft/aspnet:4.7.2 AS runtime
+FROM mcr.microsoft.com/dotnet/framework/aspnet as runtime
 WORKDIR /inetpub/wwwroot/
 COPY --from=build c:/cade-pdg/. ./
 COPY --from=build /cade/packages/EntityFramework.6.1.3/tools/migrate.exe/ ./bin/

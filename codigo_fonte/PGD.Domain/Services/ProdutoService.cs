@@ -81,7 +81,7 @@ namespace PGD.Domain.Services
             return produto;
         }
 
-        public Produto AtualizarSituacaoProduto (int idProduto, int idSituacaoProduto)
+        public Produto AtualizarSituacaoProduto (int idProduto, int? idSituacaoProduto)
         {
             Produto produto = ObterPorId(idProduto);
             produto.IdSituacaoProduto = idSituacaoProduto;

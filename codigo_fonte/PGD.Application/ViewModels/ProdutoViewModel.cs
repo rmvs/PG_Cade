@@ -93,11 +93,6 @@ namespace PGD.Application.ViewModels
 
         public virtual SituacaoProdutoViewModel SituacaoProduto { get; set; }
 
-        public int IdSituacaoProduto { get; set; }
-
-
-
-
-
+        public int? IdSituacaoProduto { get; set; }
     }
 }
