@@ -3,7 +3,8 @@
 ## Instruções
 
 1. Instale o [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
-2. Configure as variáveis de ambiente do sistema no arquivo **pg_cade.env**.
+2. Certifique-se que você possui a atualização mais recente do Windows ou Windows Server para compilar o projeto e executar um container ASP.NET mais recente.
+3. Configure as variáveis de ambiente do sistema no arquivo **pg_cade.env**.
 
 ```sh
 # Se você quiser apenas testar, utilize Desenvolvimento
@@ -40,9 +41,9 @@ LDAPQUERYFILTER=(sAMAccountName={0})
 
 Caso precise alterar alguma variável de ambiente terá que recriar o container.
 
-3. Faça o build da imagem usando o seguinte comando
+3. Faça o build da imagem usando o seguinte comando (uma imagem é gerada utilizando o limite de memória RAM de 2GB para o container)
 ```sh
- docker build --rm -t pg-cade:latest .
+ docker build --rm -t pg-cade:latest -m 2GB .
 ```
 4. Crie pastas para persistir os dados salvos entre o container e o Windows
 ```powershell
